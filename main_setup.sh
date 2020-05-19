@@ -6,7 +6,8 @@
 #pip install --no-cache-dir https://github.com/kaczmarj/neurodocker/tarball/master --upgrade
 
 # install development version
-pip install --no-cache-dir https://github.com/stebo85/neurodocker/tarball/sb_dev --upgrade
+# pip install --no-cache-dir https://github.com/stebo85/neurodocker/tarball/sb_dev --upgrade
+pip install --no-cache-dir https://github.com/stebo85/neurodocker/tarball/minc_install_from_deb_and_rpm --upgrade
 
 
 export buildMode='singularity'  #singularity or docker_singularity
@@ -15,9 +16,9 @@ export localSingularityBuild='true'
 export localSingularityBuildWritable='false'
 export remoteSingularityBuild='false'
 export testImageSingularity='false'
-export uploadToSwift='true'
+export uploadToSwift='false'
 export uploadToSylabs='false'
-export cleanupSif='true'
+export cleanupSif='false'
 
 
 if [ "$buildMode" = "singularity" ]; then
