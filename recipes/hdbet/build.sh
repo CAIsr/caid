@@ -4,6 +4,7 @@ set -e
 # this template file builds itksnap and is then used as a docker base image for layer caching
 export toolName='hdbet'
 export toolVersion='1.0.0'
+export GPU_FLAG=true
 # Don't forget to update version change in README.md!!!!!
 
 if [ "$1" != "" ]; then
@@ -20,7 +21,7 @@ neurodocker generate ${neurodocker_buildMode} \
    --run="chmod +x /usr/bin/ll" \
    --run="mkdir ${mountPointList}" \
    --install git \
-   --miniconda use_env=base \
+   --miniconda version=4.7.12.1 \
          conda_install='python=3.6' \
    --workdir /opt \
    --run="git clone https://github.com/MIC-DKFZ/HD-BET" \
